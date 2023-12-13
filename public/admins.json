@@ -1,0 +1,55 @@
+{
+ "allowAdminCreation": false,
+ "admins": [
+  {
+   "name": "𝓐𝓬𝓽𝓲𝓸𝓷",
+   "color": "#FFBD00",
+   "password": "2170617373"
+  },
+  {
+   "name": "Maven",
+   "color": "#0135A4",
+   "password": "21436f6f6c70617373776f726433"
+  },
+  {
+   "name": "TheFireTheif273",
+   "color": "#49FF00",
+   "password": "2164656b616c623037"
+  },
+  {
+   "name": "RealityOverwriter",
+   "color": "#FFFFFF",
+   "password": "2150617373776f7264"
+  },
+  {
+   "name": "𝓨𝓸𝓜𝓪𝓶𝓪",
+   "color": "#FF69B4",
+   "password": "214d6f6d506f776572"
+  },
+  {
+   "name": "𝓨𝓸𝓕𝓪𝓽𝓱𝓮𝓻",
+   "color": "#000080",
+   "password": "21446164506f776572"
+  },
+  {
+   "name": "PrincessPoppy",
+   "color": "#FF69B4",
+   "password": "215072696e63657373506f707079"
+  },
+  {
+   "name": "𝕮𝖔𝖎𝖓𝕴𝖓𝕿𝖍𝖊𝕵𝖆𝖗",
+   "color": "#FF69B4",
+   "password": "214e616e61506f776572"
+  },
+  {
+   "name": "nerd4040172",
+   "color": "#000080",
+   "password": "2141726d6164696c6c6f"
+  },
+  {
+   "name": "patrik",
+   "color": "#BD00FF",
+   "password": "2121556d"
+  }
+ ]
+}

@@ -1,0 +1,197 @@
+1<!doctype html>
+<html>
+<head>
+  	<title>Webchat - TheRamenator/Shark Development</title>
+<meta content="Webchat by TheRamenator, forked by Shark Development" property="og:title" /> <meta content="A webchat is for chatting on the web, duh." property="og:description" /> <meta content="https://webchat.sharkdevinc.repl.co/" property="og:url" /> <meta content="https://webchat.sharkdevinc.repl.co/img/favicon.ico" property="og:image" /> <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+<!-- insert fonts & material icons -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- favicon -->	
+	<link rel="icon" type="x-icon" href="img/favicon.ico?v=2">
+	
+<!-- insert css -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="themes.css" />
+
+<!-- insert all sound effects -->
+<!-- Elevator -->
+	<audio id="m1"><source src=""></audio>
+  <!-- PM Sound -->
+	<audio id="n1"><source src=""></audio>
+  <!-- User Joins Chat -->
+	<audio id="sn1"><source src=""></audio>
+  <!-- Muted, Banned, and Other No Sounds -->
+	<audio id="e"><source src=""></audio>
+  <!-- Unmuted -->
+	<audio id="n2"><source src=""></audio>
+  <!-- Recieve Update -->
+	<audio id="n3"><source src=""></audio>
+  <!-- Voice Chat -->
+  <audio id="r1"><source src=""></audio>
+  <!-- Getting Mentioned -->
+  <audio id="me1"><source src="https://the-ramenator.github.io/assets/audio/discord-ping-sound.mp3"></audio>
+
+  <noscript>Please enable Javascript</noscript>
+</head>
+
+<body id="body">
+<!-- voicechat form -->
+	<audiobar id="vcMenu">
+		<button id='mute' class="material-icons" >mic</button>
+    <button id='leave' class="material-icons" >phone_disabled</button>
+  </audiobar>
+
+<!-- taskbar form -->
+  <open-taskbar id="openTaskbar" class="material-icons taskbar">menu</open-taskbar>
+  <taskbar-effect id="taskbarEffect"></taskbar-effect>
+  <taskbar id="taskbar" class="taskbar">
+	  <div style="background: #9DE0AD; width: 100%;height: 90px;margin-bottom: 15px;">
+	    <button style="background:#45ADA8;cursor:default;" class="material-icons" id="roomsButton">view_module</button>
+	    <button class="material-icons" id="usersButton">supervisor_account</button>
+	    <button class="material-icons" id="infoButton">info</button>
+      <!-- <button class="material-icons" id="noid">settings</button> -->
+	  </div>
+	  <ver>v{{ version }}</ver>
+	  <div id="infoHeader" class="tbinfo">Info</div>
+	  <div id="tbinfo" class="tbinfo"></div>
+	  <div id="userHeader" class="tbusers">Userlist</div>
+	  <div id="tbusers" class="tbusers">
+	    <div id="userslist">Loading...</div>
+	  </div>
+	  <div id="roomsHeader" class="tbrooms">Rooms</div>
+	  <div id="tbrooms" class="tbrooms">
+	    <div id="roomslist">
+		    <div id="main" class="rooms" style="cursor:default;">> Main <</div>
+		    <div id="secondary" class="rooms">Secondary</div>
+        <form id="roomForm">
+          <input id="entroom" autocomplete="off" maxlength="30" placeholder="enter room" onkeydown="return !/^[<>]+$/ig.test(event.key)" oncontextmenu="return false;">
+	        <button id="joinroom"><span class="material-icons" style="font-size:24px;">send</span></button>
+        </form>
+        <li>join custom room</li>
+	    </div><br><br><br>
+        <span id="settings2" style="font-size: 24px; position: relative; bottom: 0;"class="settings-btn">Settings</span>
+	  </div>
+	  <div id="ping">Ping: 100ms</div>
+  </taskbar>
+
+<!-- account thingy -->
+  <span id="openAcc" class="material-icons acc">account_circle</span>
+  <acc-field id="menuAcc" class="acc" autocomplete="off" oncontextmenu="return false;"></acc-field>
+
+<!-- "user is typing" display -->
+  <div id="feedback" style="position:fixed;bottom:0;z-index:1;left:10%;color:white;"></div>
+
+<!-- messages display -->
+  <ul id="messages"></ul>
+
+<!-- private message display -->
+  <span id="pm"></span>
+
+<!-- message form -->
+  <form class="msgForm" id="msgForm">
+    <span style="position: absolute; left: 1vw;top: 3vh; font-size: 35px;" id="addEmoji" class="material-icons addEmoji">💀</span>
+    <input id="m" class="m" autocomplete="off" maxlength="75" placeholder="Type your message here" onkeydown="return !/^[<>]+$/ig.test(event.key)" oncontextmenu="return false;"><span id="addGif" class="material-icons addGif">
+      <svg width="43" height="43" aria-hidden="false" viewBox="0 0 24 24"><path fill="currentColor" d="M2 2C0.895431 2 0 2.89543 0 4V20C0 21.1046 0.89543 22 2 22H22C23.1046 22 24 21.1046 24 20V4C24 2.89543 23.1046 2 22 2H2ZM9.76445 11.448V15.48C8.90045 16.044 7.88045 16.356 6.74045 16.356C4.11245 16.356 2.66045 14.628 2.66045 12.072C2.66045 9.504 4.23245 7.764 6.78845 7.764C7.80845 7.764 8.66045 8.004 9.32045 8.376L9.04445 10.164C8.42045 9.768 7.68845 9.456 6.83645 9.456C5.40845 9.456 4.71245 10.512 4.71245 12.06C4.71245 13.62 5.43245 14.712 6.86045 14.712C7.31645 14.712 7.64045 14.616 7.97645 14.448V12.972H6.42845V11.448H9.76445ZM11.5481 7.92H13.6001V16.2H11.5481V7.92ZM20.4724 7.92V9.636H17.5564V11.328H19.8604V13.044H17.5564V16.2H15.5164V7.92H20.4724Z"></path></svg>
+  </span><span id="addImage" class="material-icons addImage">image</span>
+	  <button id="b" class="b"><span class="material-icons" style="font-size:24px;">send</span></button>
+  </form>
+
+<!-- username form -->
+	<div id="myModal" class="modal">
+		<img id="logo" src="img/logo.png" class="logo" alt="webchat">
+		<div class="modal-content">
+			<h1 class="modal-title">Login</h1>
+			<input id="nickname-input" autocomplete="off" onkeydown="return /^[a-z0-9. _!\b]+$/ig.test(event.key)" class="custom-input" type="text" maxlength="30" placeholder="user" oncontextmenu="return false;" >
+      <!--onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"-->
+      <notice id="modal-notice" class="vue"></notice>
+    </div>
+  </div>
+<!-- transition effect thing -->
+  <div class="backgrounds-shades">
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+    <div class="backgrounds-shade"></div>
+  </div>
+
+<!-- game thing -->
+  <div id="game">
+<!--    <iframe src="https://the-ramenator.github.io/experiments/killtheking.html" volume="0" width="1200" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>-->
+    <span class="material-icons">cancel</span>
+  </div>
+<div id="gifs" class="gifs">
+
+  <!-- Modal content -->
+  <div class="gif-content">
+    <div class="gif-padding">
+      <center>
+        <h1>Search For Gifs</h1>
+    <input id='gif-input' placeholder="Search..." type="text" class="js-userinput" />
+  <span class="gif-search js-go" style="font-size:24px;">Search!</span><br><br>
+    <div class="js-container">
+    </div>
+      </center>
+    </div>
+  </div>
+
+</div>
+      <!-- Settings -->
+<div id="settings" class="settings">
+  <!-- Modal content -->
+  <div class="settings-content">
+    <div class="settings-padding">
+      <div class="settings-settings">
+      <center>
+        <h1 id="h1">Settings</h1>
+        <h3 id="theme">Theme</h3>
+                <button class="settings-btn left-set" onclick="defaultTheme()">Default Theme</button>
+        <button class="settings-btn right-set" onclick="darkTheme()">Dark Theme</button>
+        <br>
+        <span class="settings-btn left-set" onclick="sunsetTheme()">Sunset Theme</span>
+        <span class="settings-btn right-set" onclick="customTheme()">Set Custom Theme</span><br>
+        <input type="color" id="col1" class="inpCol">
+        <input type="color" id="col2" class="inpCol"><br>
+        <hr>
+        <div id="rememberforadmins">
+        <h3>Remember My Username?</h3>
+        <button class="settings-btn" onclick="remember()">Yeah!</button>
+        <button class="settings-btn" onclick="forget()">Nah</button>
+        </div>
+          <!--<select id="selecth1FontFamily" name="selectFontFamily" onchange="updateh1family();">
+    <option> Serif </option>
+    <option> Arial </option>
+    <option> Sans-Serif </option>                                  
+    <option> Tahoma </option>
+    <option> Verdana </option>
+    <option> Lucida Sans Unicode </option>                               
+  </select>-->
+
+      </center>
+    </div>
+    </div>
+  </div>
+  
+</div>
+<span style="visibility:hidden;" id="username-span"></span>
+  <span style="visibility:hidden;" id="gif-src"></span>
+
+
+<!-- insert plugins -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/base64-string.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.0.7/compressor.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<!-- insert client code -->
+  <script src="client.js"></script>
+<script src="settings.js"></script>
+</body>
+</html>

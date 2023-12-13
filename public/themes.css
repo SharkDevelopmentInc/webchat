@@ -1,0 +1,148 @@
+/* DARK */
+.msgForm-dark {
+     position: fixed;
+     left: 5%;
+     background: #2a2a2a;
+     bottom: 0;
+     width: 90%;
+     height: 15%;
+     border-top: 8px solid #000000;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+}
+.m-dark {
+     position: relative;
+     background: #44444B;
+     padding: 20px;
+     width: 75%;
+     height: 50%;
+     top: 20%;
+     left: 5%;
+     font-family: 'Nunito', sans-serif;
+     font-size: 20px;
+     border: 0;
+     color: white;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+     transition: all .3s ease-out;
+}
+.b-dark {
+  position: absolute;
+  font-family: 'Nunito', sans-serif;
+  width: 3%;
+  right:5%;
+  top:24%;
+  height: 40%;
+  background: #4d4d56;
+  border: 0;
+  border-radius: 5px;
+  color: #EEFBFB;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  transition: all .3s ease-out;
+  -webkit-filter: brightness(100%);
+}
+.m-dark{
+  -webkit-filter: brightness(100%);
+}
+.m-dark:focus{
+  -webkit-filter: brightness(110%);
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  background: #4d4d56;
+}
+.b-dark:hover{
+  -webkit-filter: brightness(80%);
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+
+}
+.dark-networkMsg{
+  background: #5c5c66;
+  float: left;
+}
+.dark-clientMsg{
+  background: #4d4d56;
+  float: right;
+}
+/* SUNSET */
+.msgForm-sunset {
+     position: fixed;
+     left: 5%;
+     background: #2a2a2a;
+     bottom: 0;
+     width: 90%;
+     height: 15%;
+     border-top: 8px solid #000000;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+}
+.m-sunset {
+     position: relative;
+     background: #44444B;
+     padding: 20px;
+     width: 75%;
+     height: 50%;
+     top: 20%;
+     left: 5%;
+     font-family: 'Nunito', sans-serif;
+     font-size: 20px;
+     border: 0;
+     color: white;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+     transition: all .3s ease-out;
+}
+.b-sunset {
+  position: absolute;
+  font-family: 'Nunito', sans-serif;
+  width: 3%;
+  right:5%;
+  top:24%;
+  height: 40%;
+  background: #4d4d56;
+  border: 0;
+  border-radius: 5px;
+  color: #EEFBFB;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  transition: all .3s ease-out;
+  -webkit-filter: brightness(100%);
+}
+.m-sunset{
+  -webkit-filter: brightness(100%);
+}
+.m-sunset:focus{
+  -webkit-filter: brightness(110%);
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  background: #4d4d56;
+}
+.b-sunset:hover{
+  -webkit-filter: brightness(80%);
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+
+}
+.sunset-networkMsg{
+  background: #FF8EF1;
+  float: left;
+}
+.sunset-clientMsg{
+  background: #FFCB8E;
+  float: right;
+}
